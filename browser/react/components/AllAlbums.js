@@ -19,7 +19,7 @@ export default class AllAlbums extends Component {
       });
   }
 
-  render () {
+  render() {
 
     const selectAlbum = this.props.selectAlbum;
     const albums = this.state.albums;
@@ -28,22 +28,21 @@ export default class AllAlbums extends Component {
       <div>
         <h3>Albums</h3>
         <div className="row">
-        {
-          albums.map(album => (
-            <div className="col-xs-4" key={ album.id }>
-            {/*}  <Link to={`/albums/${album.id}`}</Link>*/}
-              <a className="thumbnail" href="#" onClick={() => selectAlbum(album.id)}>
-                <img src={ album.imageUrl } />
-                <div className="caption">
-                  <h5>
-                    <span>{ album.name }</span>
-                  </h5>
-                  <small>{ album.songs.length } songs</small>
-                </div>
-              </a>
-            </div>
-          ))
-        }
+          {
+            albums.map(album => (
+              <div className="col-xs-4 thumbnail" key={album.id}>
+                <Link to={`/albums/${album.id}`}>
+                  <img src={album.imageUrl} />
+                  <div className="caption">
+                    <h5>
+                      <span>{album.name}</span>
+                    </h5>
+                    <small>{album.songs.length} songs</small>
+                  </div>
+                </Link>
+              </div>
+            ))
+          }
         </div>
       </div>
     );
