@@ -19,8 +19,7 @@ export default class AllAlbums extends Component {
   }
 
   render () {
-    console.log(this.props);
-    //const albums = this.props.albums;
+
     const selectAlbum = this.props.selectAlbum;
     const albums = this.state.albums;
 
